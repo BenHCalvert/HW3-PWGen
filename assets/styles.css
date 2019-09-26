@@ -6,6 +6,9 @@
     border-radius: 4px;
     padding: 8px;
 }
+input{
+    border-style: dashed;
+}
 
 #title1{
     margin: auto;  
