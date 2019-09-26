@@ -1,0 +1,25 @@
+.idbox{
+    background: #fff;
+    border: lightgrey;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+#title1{
+    margin: auto;  
+    color: #3b4954;
+    /* height: 100px; */
+    padding: 10px 0px 10px 0px;  
+}
+
+#title2{
+    margin: auto;  
+    color: #3b4954;
+    padding: 10px 0px 10px 0px;
+}
+
+button{
+    margin: auto;    
+}

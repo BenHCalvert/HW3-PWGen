@@ -5,35 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- style sheets -->
-    <link rel="stylesheet" type="text/css" href="assets/reset.css">
+    <!-- <link rel="stylesheet" type="text/css" href="assets/reset.css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/styles.css">
     <title>PW Generator</title>
 </head>
-<body>
+<body background="assets/images/memphis-mini.png">
     <div class="container">
             
         <!-- Titles -->
         <div class="row">
-            <div class="col-">
-                <div class="mx-auto">
+                <div id="title1">
                     <h1>Password Generator</h1>
-                </div>
             </div>
         </div>
     
-        <div class="row">
-            <div class="col-">
-                <div class="mx-auto">
-                    <h2>Generate a Password</h2>
-                </div>
+        <!-- box -->
+    <div class="idbox">
+
+        <div class="row">            
+                <div id="title2">
+                    <h2>Generate a Password</h2>                
             </div>
         </div>
 
     <!-- PW Output Box -->
     
         <div class="row">
-            <div class="col-">
+            <div class="col">
                 <div class="form-group">                    
                     <input type="PW" class="form-control" id="pwOutput" aria-describedby="emailHelp" placeholder="Your Secure Password">
                     <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
@@ -43,16 +42,17 @@
 
         <!-- Buttons -->
         <div class="row">
-                <div class="col-4">
+                <div class="col">
                     <button type="button" class="btn btn-danger">Generate Password</button>
                 </div>
-                <div class="col-4"></div>
-                <div class="col-4">
-                    test button 2
+                <!-- <div class="col-4"></div> -->
+                <div class="col">
+                    <button type="button" class="btn btn-secondary">Copy to Clipboard</button>
                 </div>     
         </div>
 
-
+    </div>
+    
     </div>
 
 
