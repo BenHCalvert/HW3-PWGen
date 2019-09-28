@@ -39,7 +39,6 @@ function randomSpec(letters) {
 }
 // Console log the result
 console.log(randomSpec(pwLen));
-
 console.log(randomNum(pwLen) + randomSpec(pwLen) + randomCharacters(pwLen));
 
 
@@ -53,11 +52,14 @@ console.log(randomNum(pwLen) + randomSpec(pwLen) + randomCharacters(pwLen));
 
 
 // pushing each random character into an array and joining each into a string
-function randomCharactersBonus(letters) {
+function PWGen(letters) {
 var newChars = [];
 for (var i = 0; i < letters; i++) {
     newChars.push(charactersLet[Math.floor(Math.random() * charactersLet.length)]);
+    newChars.push(charactersSpec[Math.floor(Math.random() * charactersLet.length)]);
+    newChars.push(charactersNum[Math.floor(Math.random() * charactersLet.length)]);
 }
     return newChars.join('');
 }
-console.log(randomCharactersBonus(pwLen));
+console.log(PWGen(pwLen));
+OutputBox.setAttribute("placeholder",(PWGen(pwLen)));
