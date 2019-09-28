@@ -7,20 +7,49 @@ var GenerateBtn = document.getElementById('btn btn-danger');
 var OutputBox = document.getElementById('pwOutput');
 
 
-// Generate string
+// Generate string - Charecters ************************************************
 function randomCharacters(letters) {
 var result = '';
 for (var i = 0; i < letters; i++) {
     result += charactersLet[Math.floor(Math.random() * charactersLet.length)];
 }
 return result;
-// this next line doesnt work!!!
-OutputBox.textContent = result;
 }
 // Console log the result
 console.log(randomCharacters(pwLen));
 
-// add result to output box
+// Generate string - Spec Char ************************************************
+function randomNum(letters) {
+    var result = '';
+    for (var i = 0; i < letters; i++) {
+        result += charactersNum[Math.floor(Math.random() * charactersNum.length)];
+    }
+    return result;
+}
+// Console log the result
+console.log(randomNum(pwLen));
+
+// Generate string - Numbers ************************************************
+function randomSpec(letters) {
+    var result = '';
+    for (var i = 0; i < letters; i++) {
+        result += charactersSpec[Math.floor(Math.random() * charactersSpec.length)];
+    }
+    return result;
+}
+// Console log the result
+console.log(randomSpec(pwLen));
+
+console.log(randomNum(pwLen) + randomSpec(pwLen) + randomCharacters(pwLen));
+
+
+
+
+
+
+
+
+
 
 
 
