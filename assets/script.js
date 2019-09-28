@@ -7,7 +7,7 @@ var GenerateBtn = document.getElementById('btn btn-danger');
 var OutputBox = document.getElementById('pwOutput');
 
 
-// Generate string - Charecters ************************************************
+// Generate string - Characters ************************************************
 function randomCharacters(letters) {
 var result = '';
 for (var i = 0; i < letters; i++) {
@@ -41,7 +41,6 @@ function randomSpec(letters) {
 console.log(randomSpec(pwLen));
 
 console.log(randomNum(pwLen) + randomSpec(pwLen) + randomCharacters(pwLen));
-
 
 
 
