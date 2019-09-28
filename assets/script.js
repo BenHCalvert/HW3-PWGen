@@ -2,9 +2,10 @@
 var charactersLet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 var charactersNum = '0123456789';
 var charactersSpec = '!@#$%^&*()';
-var pwLen = prompt("");
+var pwLen = prompt("Enter password length", "");
 var GenerateBtn = document.getElementById('btn btn-danger');
 var OutputBox = document.getElementById('pwOutput');
+var password = PWGen(pwLen);
 
 
 // Generate string - Characters ************************************************
@@ -51,7 +52,8 @@ console.log(randomNum(pwLen) + randomSpec(pwLen) + randomCharacters(pwLen));
 
 
 
-// pushing each random character into an array and joining each into a string
+
+// pushing each random character into an array, then join to a string
 function PWGen(letters) {
 var newChars = [];
 for (var i = 0; i < letters; i++) {
@@ -61,5 +63,9 @@ for (var i = 0; i < letters; i++) {
 }
     return newChars.join('');
 }
+// console log array result
 console.log(PWGen(pwLen));
-OutputBox.setAttribute("placeholder",(PWGen(pwLen)));
+
+// putt password in Output box
+OutputBox.textContent(password);
+
