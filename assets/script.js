@@ -8,6 +8,7 @@ var OutputBox = document.getElementById('pwOutput');
 var password = PWGen(pwLen);
 
 
+
 // Generate string - Characters ************************************************
 function randomCharacters(letters) {
 var result = '';
@@ -38,6 +39,14 @@ function randomSpec(letters) {
     }
     return result;
 }
+// Copy PW to clipboard
+function copy() {
+    var copyText = document.querySelector("#pwOutput");
+    copyText.select();
+    document.execCommand("copy");
+  }
+
+
 // Console log the result
 console.log(randomSpec(pwLen));
 console.log(randomNum(pwLen) + randomSpec(pwLen) + randomCharacters(pwLen));
@@ -66,6 +75,8 @@ for (var i = 0; i < letters; i++) {
 // console log array result
 console.log(PWGen(pwLen));
 
-// putt password in Output box
-OutputBox.textContent(password);
+var FinalPW = PWGen(pwLen);
+
+// put password in Output box
+OutputBox.textContent(FinalPW);
 
