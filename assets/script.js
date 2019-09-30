@@ -2,11 +2,11 @@
 var charactersLet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 var charactersNum = '0123456789';
 var charactersSpec = '!@#$%^&*()';
-var pwLen = prompt("Enter password length", "");
+var pwLen = prompt("Enter password length", 0);
 var GenerateBtn = document.getElementById('btn btn-danger');
 var OutputBox = document.getElementById('pwOutput');
-var password = PWGen(pwLen);
-
+// Set variable with final PW for pushing to page
+var FinalPW = PWGen(pwLen);
 
 
 // Generate string - Characters ************************************************
@@ -39,27 +39,10 @@ function randomSpec(letters) {
     }
     return result;
 }
-// Copy PW to clipboard
-function copy() {
-    var copyText = document.querySelector("#pwOutput");
-    copyText.select();
-    document.execCommand("copy");
-  }
-
 
 // Console log the result
 console.log(randomSpec(pwLen));
 console.log(randomNum(pwLen) + randomSpec(pwLen) + randomCharacters(pwLen));
-
-
-
-
-
-
-
-
-
-
 
 
 // pushing each random character into an array, then join to a string
@@ -72,11 +55,17 @@ for (var i = 0; i < letters; i++) {
 }
     return newChars.join('');
 }
+
 // console log array result
 console.log(PWGen(pwLen));
 
-var FinalPW = PWGen(pwLen);
-
 // put password in Output box
-OutputBox.textContent(FinalPW);
+OutputBox.textContent = FinalPW;
+
+// Copy PW to clipboard (isn't working right now but I'm not sure why)
+function copy() {
+    var copyText = document.querySelector("#pwOutput");
+    copyText.select();
+    document.execCommand("copy");
+  }
 

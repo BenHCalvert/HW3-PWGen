@@ -27,3 +27,13 @@ button{
     margin: auto;
     padding: 5px;    
 }
+
+p{
+    border-style: solid;
+    border-width: 1px;
+    border: lightgrey;
+    height: 60px;
+    width: 90%;
+    text-align: center;
+    margin: auto;
+}
