@@ -69,3 +69,7 @@ function copy() {
     document.execCommand("copy");
   }
 
+//   New PW when generate button is clicked
+document.querySelector('.btn btn-danger').onclick = function(){
+    PWGen()
+}
