@@ -8,6 +8,43 @@ var OutputBox = document.getElementById('pwOutput');
 // Set variable with final PW for pushing to page
 var FinalPW = PWGen(pwLen);
 
+// create variables for criteria selection toggle buttons
+let specChar = true;
+let capChar = true;
+let numChar = true;
+
+// change variable based on user input
+
+// special charecters
+document.getElementById('specN').onclick = function(){
+    let specChar = true;
+    console.log('Special Charecters', specChar);
+};
+document.getElementById('specY').onclick = function(){
+    let specChar = true;
+    console.log('Special Charecters', specChar);
+};
+// capital charecters
+document.getElementById('capN').onclick = function(){
+    let capChar = true;
+    console.log('Cap Charecters', capChar);
+};
+document.getElementById('capY').onclick = function(){
+    let capChar = true;
+    console.log('Cap Charecters', capChar);
+};
+// numeric charecters
+document.getElementById('numN').onclick = function(){
+    let numChar = true;
+    console.log('Num Charecters', numChar);
+};
+document.getElementById('numY').onclick = function(){
+    let numChar = true;
+    console.log('Num Charecters', numChar);
+};
+
+
+
 
 // Generate string - Characters ************************************************
 function randomCharacters(letters) {
@@ -70,6 +107,6 @@ function copy() {
   }
 
 //   New PW when generate button is clicked
-document.querySelector('.btn btn-danger').onclick = function(){
-    PWGen()
-}
+// document.querySelector('.btn btn-danger').onclick = function(){
+//     PWGen()
+// }
