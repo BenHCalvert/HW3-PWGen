@@ -20,17 +20,66 @@
             </div>
         </div>
     
-    <!-- Whitespace Box -->
-    <div class="idbox">
+    
+    <div class="idbox"><!-- Whitespace Box -->
 
+<!-- Password Criteria -->
         <div class="row">            
             <div id="title2">
-                <h3>Generate a Password</h3>                
+                <h3>Password Criteria</h3>                
             </div>
         </div>
 
-    <!-- PW Output Box -->
-    
+        <!-- Special Charecters -->
+        <h6>Special Charecters</h6>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary active">
+                    <input type="radio" name="options" id="specY" autocomplete="off" checked> Yes
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="specN" autocomplete="off"> No
+                </label>            
+        </div>
+        <!-- Charecter Case -->
+        <h6>Capital Letters</h6>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+                <input type="radio" name="options" id="capY" autocomplete="off" checked> Yes
+            </label>
+            <label class="btn btn-secondary">
+                <input type="radio" name="options" id="capN" autocomplete="off"> No
+            </label>            
+        </div>
+        <!-- Numbers -->
+        <h6>Numeric Charecters</h6>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+                <input type="radio" name="options" id="numY" autocomplete="off" checked> Yes
+            </label>
+            <label class="btn btn-secondary">
+                <input type="radio" name="options" id="numN" autocomplete="off"> No
+            </label>            
+        </div>       
+        <h6>Password Length</h6>
+        <div class="col-md-8">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="pwLen">
+            </div>
+        </div>
+        <!-- <div class="col-md-3"> -->
+            <button type="button" class="btn btn-danger" id="generate">Generate Password</button>
+        <!-- </div> -->
+        
+    </div>
+
+<!-- div to create space between input and output -->
+    <div class="spacer"></div>
+
+    <div class="idbox">
+
+
+<!-- Password Output -->
+        
         <div class="row">
             <div class="col">
                 <div class="form-group">                                     
@@ -40,20 +89,18 @@
                 </div>
             </div>
         </div>
-
-    <!-- Buttons -->
+        
+        <!-- Buttons -->
         <div class="row">
-                <div class="col">
-                    <button type="button" class="btn btn-danger" onclick="PWGen();">Generate Password</button>
-                </div>
-                <!-- <div class="col-4"></div> -->
-                <div class="col">
-                    <button type="button" class="btn btn-secondary">Copy to Clipboard</button>
-                </div>     
+            
+            <!-- <div class="col-4"></div> -->
+            <div class="col">
+                <button type="button" class="btn btn-secondary">Copy to Clipboard</button>
+            </div>     
         </div>
-
-    </div>
-    
+        
+        
+        </div>
     </div>
 
 

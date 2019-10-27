@@ -10,6 +10,14 @@ input{
     border-style: dashed;
 }
 
+.btn{
+    padding: .2rem .4rem;
+}
+
+.spacer{
+    height: 1rem;
+}
+
 #title1{
     margin: auto;  
     color: #3b4954;

@@ -2,7 +2,7 @@
 var charactersLet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 var charactersNum = '0123456789';
 var charactersSpec = '!@#$%^&*()';
-var pwLen = prompt("Enter password length", 0);
+var pwLen = document.getElementById('pwLen');
 var GenerateBtn = document.getElementById('btn btn-danger');
 var OutputBox = document.getElementById('pwOutput');
 // Set variable with final PW for pushing to page
