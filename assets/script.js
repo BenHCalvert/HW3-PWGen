@@ -9,42 +9,47 @@ var OutputBox = document.getElementById('pwOutput');
 var FinalPW = PWGen(pwLen);
 
 // create variables for criteria selection toggle buttons
-let specChar = true;
-let capChar = true;
-let numChar = true;
+var specChar = true;
+var capChar = true;
+var numChar = true;
+
+// set variables for each button
+var specNBtn = document.getElementById("specN");
+var specYBtn = document.getElementById("specY");
+var capNBtn = document.getElementById("capN");
+var capYBtn = document.getElementById("capY");
+var numNBtn = document.getElementById("numN");
+var numYBtn = document.getElementById("numY")
 
 // change variable based on user input
 
-// special charecters
-document.getElementById('specN').onclick = function(){
+    // special charecters
+specNBtn.onclick = function(){
+    let specChar = false;
+    console.log('Special Charecters', specChar);
+};
+specYBtn.onclick = function(){
     let specChar = true;
     console.log('Special Charecters', specChar);
 };
-document.getElementById('specY').onclick = function(){
-    let specChar = true;
-    console.log('Special Charecters', specChar);
+    // capital charecters
+capNBtn.onclick = function(){
+    let capChar = false;
+    console.log('Cap Charecters', capChar);
 };
-// capital charecters
-document.getElementById('capN').onclick = function(){
+capYBtn.onclick = function(){
     let capChar = true;
     console.log('Cap Charecters', capChar);
 };
-document.getElementById('capY').onclick = function(){
-    let capChar = true;
-    console.log('Cap Charecters', capChar);
+    // numeric charecters
+numNBtn.onclick = function(){
+    let numChar = false;
+    console.log('Num Charecters', numChar);
 };
-// numeric charecters
-document.getElementById('numN').onclick = function(){
+numYBtn.onclick = function(){
     let numChar = true;
     console.log('Num Charecters', numChar);
 };
-document.getElementById('numY').onclick = function(){
-    let numChar = true;
-    console.log('Num Charecters', numChar);
-};
-
-
-
 
 // Generate string - Characters ************************************************
 function randomCharacters(letters) {
