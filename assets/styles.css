@@ -45,3 +45,18 @@ p{
     text-align: center;
     margin: auto;
 }
+
+/* styles for screens smaller than 769px */
+@media screen and (max-width: 768px) {
+    
+    h1{
+        padding: 10px 0px 10px 0px; 
+        font-size: 1.25rem;
+    }
+    #titlerow{
+        height: 70px;
+    }
+    h3{
+        font-size: 1rem;
+    }
+}
