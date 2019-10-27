@@ -2,7 +2,6 @@
 var charactersLet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 var charactersNum = '0123456789';
 var charactersSpec = '!@#$%^&*()';
-var pwLen = document.getElementById('pwLen');
 var GenerateBtn = document.getElementById('btn btn-danger');
 var OutputBox = document.getElementById('pwOutput');
 // Set variable with final PW for pushing to page
@@ -13,13 +12,15 @@ var specChar = true;
 var capChar = true;
 var numChar = true;
 
-// set variables for each button
+// set variables for each button/input
 var specNBtn = document.getElementById("specN");
 var specYBtn = document.getElementById("specY");
 var capNBtn = document.getElementById("capN");
 var capYBtn = document.getElementById("capY");
 var numNBtn = document.getElementById("numN");
-var numYBtn = document.getElementById("numY")
+var numYBtn = document.getElementById("numY");
+var pwLen = document.getElementById("pwLen").value;
+
 
 // change variable based on user input
 
