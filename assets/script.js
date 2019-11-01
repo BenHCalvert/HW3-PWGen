@@ -20,6 +20,7 @@ var capYBtn = document.getElementById("capY");
 var numNBtn = document.getElementById("numN");
 var numYBtn = document.getElementById("numY");
 var pwLen = document.getElementById("pwLen").value;
+var generateBtn = document.getElementById("generate");
 
 
 // change variable based on user input
@@ -50,6 +51,11 @@ numNBtn.onclick = function(){
 numYBtn.onclick = function(){
     let numChar = true;
     console.log('Num Charecters', numChar);
+};
+
+    // On click for generate button
+generateBtn.onclick = function(){
+    console.log('PW Len Value: ', pwLen);
 };
 
 // Generate string - Characters ************************************************
