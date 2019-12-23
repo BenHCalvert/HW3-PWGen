@@ -19,7 +19,7 @@ var capNBtn = document.getElementById("capN");
 var capYBtn = document.getElementById("capY");
 var numNBtn = document.getElementById("numN");
 var numYBtn = document.getElementById("numY");
-var pwLen = document.getElementById("pwLen").value;
+var pwLen = 0;
 var generateBtn = document.getElementById("generate");
 
 
@@ -55,7 +55,9 @@ numYBtn.onclick = function(){
 
     // On click for generate button
 generateBtn.onclick = function(){
-    console.log('PW Len Value: ', pwLen);
+    // get the value of the PW length input field, change it to an integer, set it to var pwLen and console log it!
+    var pwLen = parseInt(document.getElementById("pwLen").value);
+    console.log('PW Length', pwLen);
 };
 
 // Generate string - Characters ************************************************
