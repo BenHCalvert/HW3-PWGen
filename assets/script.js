@@ -53,11 +53,15 @@ numYBtn.onclick = function(){
     console.log('Num Charecters', numChar);
 };
 
-    // On click for generate button
-generateBtn.onclick = function(){
-    // get the value of the PW length input field, change it to an integer, set it to var pwLen and console log it!
+// get the value of the PW length input field, change it to an integer, set it to var pwLen and console log it
+function getPWLen() {
     var pwLen = parseInt(document.getElementById("pwLen").value);
     console.log('PW Length', pwLen);
+}
+
+    // On click for generate button
+generateBtn.onclick = function(){
+    getPWLen();
 };
 
 // Generate string - Characters ************************************************
