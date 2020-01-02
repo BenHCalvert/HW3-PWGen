@@ -6,7 +6,8 @@ var charactersSpec = '!@#$%^&*()';
 var GenerateBtn = document.getElementById('btn btn-danger');
 var OutputBox = document.getElementById('pwOutput');
 // Set variable with final PW for pushing to page
-var FinalPW = ['abcdefghijklmnopqrstuvwxyz']
+var FinalPW = ['abcdefghijklmnopqrstuvwxyz'];
+var retVal = "";
 
 // create variables for criteria selection toggle buttons
 var specChar = true;
@@ -59,85 +60,45 @@ numYBtn.onclick = function(){
 // get the value of the PW length input field, change it to an integer, set it to var pwLen and console log it
 function getPWLen() {
     var pwLen = parseInt(document.getElementById("pwLen").value);
-    console.log('PW Length', pwLen);
-}
+    console.log('PW Length', pwLen);    
+};
 
 // On click for generate button
-generateBtn.onclick = function(){
+generateBtn.onclick = function(){    
     getPWLen();
+    console.log(retVal);
+    generatePassword();
+    // put password in Output box
+    OutputBox.textContent = FinalPW;
 };
+
+// Function to generate password
+function generatePassword() {  
+        
+    for (var i = 0, n = FinalPW.pwLen; i < pwLen; ++i) {
+        retVal += FinalPW.charAt(Math.floor(Math.random() * n));
+    }
+    return retVal;
+};
+
 
 // If statements that push different values into the array based on user input toggle switches
 if (specChar === true) {
     FinalPW.push(charactersSpec);
     console.log(FinalPW);
-}
+};
 
 if (capChar === true) {
     FinalPW.push(charactersCap);
     console.log(FinalPW);
-}
+};
 
 if (numChar === true) {
     FinalPW.push(charactersNum);
     console.log(FinalPW);
-}
+};
 
 
-
-
-// // Generate string - Characters ************************************************
-// function randomCharacters(letters) {
-// var result = '';
-// for (var i = 0; i < letters; i++) {
-//     result += charactersLet[Math.floor(Math.random() * charactersLet.length)];
-// }
-// return result;
-// }
-// // Console log the result
-// console.log(randomCharacters(pwLen));
-
-// // Generate string - Spec Char ************************************************
-// function randomNum(letters) {
-//     var result = '';
-//     for (var i = 0; i < letters; i++) {
-//         result += charactersNum[Math.floor(Math.random() * charactersNum.length)];
-//     }
-//     return result;
-// }
-// // Console log the result
-// console.log(randomNum(pwLen));
-
-// // Generate string - Numbers ************************************************
-// function randomSpec(letters) {
-//     var result = '';
-//     for (var i = 0; i < letters; i++) {
-//         result += charactersSpec[Math.floor(Math.random() * charactersSpec.length)];
-//     }
-//     return result;
-// }
-
-// // Console log the result
-// console.log(randomSpec(pwLen));
-// console.log(randomNum(pwLen) + randomSpec(pwLen) + randomCharacters(pwLen));
-
-
-// // pushing each random character into an array, then join to a string
-// function PWGen(letters) {
-// var newChars = [];
-// for (var i = 0; i < letters; i++) {
-//     newChars.push(charactersLet[Math.floor(Math.random() * charactersLet.length)]);
-//     newChars.push(charactersSpec[Math.floor(Math.random() * charactersLet.length)]);
-//     newChars.push(charactersNum[Math.floor(Math.random() * charactersLet.length)]);
-// }
-//     return newChars.join('');
-// }
-
-// // console log array result
-// console.log(PWGen(pwLen));
-
-// put password in Output box
-OutputBox.textContent = FinalPW;
 
 // Copy PW to clipboard (isn't working right now but I'm not sure why)
 function copy() {
