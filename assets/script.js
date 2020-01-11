@@ -21,6 +21,7 @@ var capNBtn = document.getElementById("capN");
 var capYBtn = document.getElementById("capY");
 var numNBtn = document.getElementById("numN");
 var numYBtn = document.getElementById("numY");
+var copyBtn = document.getElementById("copy-button")
 var pwLen = 0;
 var generateBtn = document.getElementById("generate");
 
@@ -75,6 +76,7 @@ generateBtn.onclick = function(){
 
 // Function to generate password
 function generatePassword() {    
+    // isn't working - need a way to reset the final password before running charSelection
     var FinalPW = ['abcdefghijklmnopqrstuvwxyz'];
     charSelection();
         
@@ -105,11 +107,12 @@ function charSelection() {
 
 };
 
-
-
 // Copy PW to clipboard (isn't working right now but I'm not sure why)
-function copy() {
+copyBtn.onclick = function() {
+    console.log("copy button duh")
     var copyText = document.querySelector("#pwOutput");
     copyText.select();
     document.execCommand("copy");
-  }
+}
+
+
