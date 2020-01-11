@@ -66,14 +66,17 @@ function getPWLen() {
 // On click for generate button
 generateBtn.onclick = function(){    
     getPWLen();
-    console.log(retVal);
+    console.log('retVal', retVal);
     generatePassword();
     // put password in Output box
-    OutputBox.textContent = FinalPW;
+    // OutputBox.textContent = FinalPW;
+    console.log('Final Password', FinalPW)
 };
 
 // Function to generate password
-function generatePassword() {  
+function generatePassword() {    
+    var FinalPW = ['abcdefghijklmnopqrstuvwxyz'];
+    charSelection();
         
     for (var i = 0, n = FinalPW.pwLen; i < pwLen; ++i) {
         retVal += FinalPW.charAt(Math.floor(Math.random() * n));
@@ -83,19 +86,23 @@ function generatePassword() {
 
 
 // If statements that push different values into the array based on user input toggle switches
-if (specChar === true) {
-    FinalPW.push(charactersSpec);
-    console.log(FinalPW);
-};
+function charSelection() {
 
-if (capChar === true) {
-    FinalPW.push(charactersCap);
-    console.log(FinalPW);
-};
+    if (specChar === true) {
+        FinalPW.push(charactersSpec);
+        // console.log(FinalPW);
+    };
 
-if (numChar === true) {
-    FinalPW.push(charactersNum);
-    console.log(FinalPW);
+    if (capChar === true) {
+        FinalPW.push(charactersCap);
+        // console.log(FinalPW);
+    };
+
+    if (numChar === true) {
+        FinalPW.push(charactersNum);
+        // console.log(FinalPW);
+    };
+
 };
 
 
