@@ -11,9 +11,9 @@ var test = true
 var pwLen = 0;
 
 // create variables for criteria selection toggle buttons
-var specChar = true;
-var capChar = true;
-var numChar = true;
+let specChar = true;
+let capChar = true;
+let numChar = true;
 
 // set variables for each button/input
 var specNBtn = document.getElementById("specN");
@@ -85,7 +85,7 @@ function generatePassword() {
 
 
 // If statements that push different values into the array based on user input toggle switches
-function charSelection() {
+function charSelection(specChar, capChar, numChar) {
 
     if (specChar === true) {
         FinalPW += charactersSpec;        
@@ -97,7 +97,10 @@ function charSelection() {
 
     if (numChar === true) {
         FinalPW += charactersNum;        
-    };
+    }; 
+   
+    return FinalPW; 
+    
 
 };
 
@@ -108,5 +111,12 @@ copyBtn.onclick = function() {
     copyText.select();
     document.execCommand("copy");
 };
+
+// var copier = function() {
+//     var copyText = document.getElementById("password");
+//     copyText.select();
+//     copyText.setSelectionRange(0, 99999);
+//     document.execCommand("copy");
+//     alert("Your new password has been copied to the clipboard. The password is: " + copyText.value);
 
 
