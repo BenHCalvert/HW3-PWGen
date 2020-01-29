@@ -9,6 +9,7 @@ var FinalPW = 'abcdefghijklmnopqrstuvwxyz';
 var retVal = "";
 var test = true
 var pwLen = 0;
+var pwArr = [];
 
 // create variables for criteria selection toggle buttons
 let specChar = true;
@@ -59,26 +60,26 @@ numYBtn.onclick = function(){
 };
 
 // get the value of the PW length input field, change it to an integer, set it to var pwLen and console log it
-function getPWLen() {
-    var pwLen = parseInt(document.getElementById("pwLen").value);
+function getPWLen(pwLen) {
+    pwLen = parseInt(document.getElementById("pwLen").value);
     if (test) {console.log('PW Length', pwLen)};    
 };
 
 // On click for generate button
-generateBtn.onclick = function(){    
-    getPWLen();
-    console.log('retVal', retVal);
-    charSelection();
+generateBtn.onclick = function(specChar, capChar, numChar, pwLen){    
+    getPWLen(pwLen);    
+    charSelection(specChar, capChar, numChar);
     generatePassword();
     // put password in Output box
     OutputBox.textContent = FinalPW;
     if (test) {console.log('Final Password', FinalPW)}
 };
 
-// Function to generate password
-function generatePassword() {  
-    for (var i = 0, n = FinalPW.pwLen; i < pwLen; ++i) {
-        retVal += FinalPW.charAt(Math.floor(Math.random() * n));
+// Function to generate password,change FinalPW to an array and set length based on pwLen
+function generatePassword(FinalPW) {  
+    pwArr = FinalPW.split();
+    for (var i = 0, n = pwArr.pwLen; i < pwLen; ++i) {
+        retVal += pwArr.charAt(Math.floor(Math.random() * pwLen));
     }
     return retVal;
 };
@@ -107,16 +108,12 @@ function charSelection(specChar, capChar, numChar) {
 // Copy PW to clipboard
 copyBtn.onclick = function() {
     if (test) {console.log("copy button duh")}
-    var copyText = document.querySelector("#pwOutput");
+    var copyText = document.getElementById("pwOutput");
     copyText.select();
+    copyText.setSelectionRange(0, 99999);
     document.execCommand("copy");
+    alert("Your new password has been copied to the clipboard. The password is: " + copyText.value);
 };
 
-// var copier = function() {
-//     var copyText = document.getElementById("password");
-//     copyText.select();
-//     copyText.setSelectionRange(0, 99999);
-//     document.execCommand("copy");
-//     alert("Your new password has been copied to the clipboard. The password is: " + copyText.value);
 
 
