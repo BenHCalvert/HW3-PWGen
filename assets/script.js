@@ -5,7 +5,6 @@ var charactersNum = '0123456789';
 var charactersSpec = '!@#$%^&*()';
 var GenerateBtn = document.getElementById('btn btn-danger');
 var OutputBox = document.getElementById('pwOutput');
-// Set variable with final PW for pushing to page
 var FinalPW = ['abcdefghijklmnopqrstuvwxyz'];
 var retVal = "";
 
@@ -70,7 +69,7 @@ generateBtn.onclick = function(){
     console.log('retVal', retVal);
     generatePassword();
     // put password in Output box
-    // OutputBox.textContent = FinalPW;
+    OutputBox.textContent = FinalPW;
     console.log('Final Password', FinalPW)
 };
 
@@ -107,12 +106,12 @@ function charSelection() {
 
 };
 
-// Copy PW to clipboard (isn't working right now but I'm not sure why)
+// Copy PW to clipboard
 copyBtn.onclick = function() {
     console.log("copy button duh")
     var copyText = document.querySelector("#pwOutput");
     copyText.select();
     document.execCommand("copy");
-}
+};
 
 
