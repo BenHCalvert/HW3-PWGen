@@ -108,11 +108,12 @@ function charSelection(specChar, capChar, numChar) {
 };
 
 // Copy PW to clipboard
-copyBtn.onclick = function() {
+copyBtn.onclick = function(OutputBox) {
     if (test) {console.log("copy button duh")}
-    var copyText = document.getElementById("pwOutput");
-    copyText.select();
-    copyText.setSelectionRange(0, 99999);
+    var copyEl = OutputBox;
+    copyEl.focus();
+    copyEl.select();
+    copyEl.setSelectionRange(0, this.value.length);
     document.execCommand("copy");
     alert("Your new password has been copied to the clipboard. The password is: " + copyText.value);
 };
