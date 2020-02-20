@@ -7,7 +7,7 @@ var GenerateBtn = document.getElementById('btn btn-danger');
 var OutputBox = document.getElementById('pwOutput');
 var FinalPW = 'abcdefghijklmnopqrstuvwxyz';
 var retVal = "";
-var test = true
+var test = true;
 var pwLen = 0;
 var pwArr = [];
 
@@ -31,55 +31,57 @@ var generateBtn = document.getElementById("generate");
 
  // special charecters
 specNBtn.onclick = function(){
-    let specChar = false;
+    specChar = false;
     if (test) {console.log('Special Charecters', specChar)};
 };
 specYBtn.onclick = function(){
-    let specChar = true;
+    specChar = true;
     if (test) {console.log('Special Charecters', specChar)};
 };
  
 // capital charecters
 capNBtn.onclick = function(){
-    let capChar = false;
+    capChar = false;
     if (test) {console.log('Cap Charecters', capChar)};
 };
 capYBtn.onclick = function(){
-    let capChar = true;
+    capChar = true;
     if (test) {console.log('Cap Charecters', capChar)};
 };
  
 // numeric charecters
 numNBtn.onclick = function(){
-    let numChar = false;
+    numChar = false;
     if (test) {console.log('Num Charecters', numChar)};
 };
 numYBtn.onclick = function(){
-    let numChar = true;
+    numChar = true;
     if (test) {console.log('Num Charecters', numChar)};
 };
 
 // get the value of the PW length input field, change it to an integer, set it to var pwLen and console log it
-function getPWLen(pwLen) {
+function getPWLen() {
     pwLen = parseInt(document.getElementById("pwLen").value);
     if (test) {console.log('PW Length', pwLen)};    
 };
 
 // On click for generate button
-generateBtn.onclick = function(specChar, capChar, numChar, pwLen){    
-    getPWLen(pwLen);    
+generateBtn.onclick = function(){    
+    getPWLen();    
     charSelection(specChar, capChar, numChar);
-    generatePassword();
     // put password in Output box
-    OutputBox.textContent = FinalPW;
+    OutputBox.innerText = generatePassword(); 
+    FinalPW = charactersLet;
+    retVal = '';   
     if (test) {console.log('Final Password', FinalPW)}
 };
 
 // Function to generate password,change FinalPW to an array and set length based on pwLen
-function generatePassword(FinalPW) {  
-    pwArr = FinalPW.split();
-    for (var i = 0, n = pwArr.pwLen; i < pwLen; ++i) {
-        retVal += pwArr.charAt(Math.floor(Math.random() * pwLen));
+function generatePassword() {  
+    pwArr = FinalPW.split('');
+    for (var i = 0; i < pwLen; i++) {
+        retVal += pwArr[Math.floor(Math.random() * pwArr.length)];
+        // console.log('retval', retVal);
     }
     return retVal;
 };
