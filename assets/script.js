@@ -81,7 +81,6 @@ function generatePassword() {
     pwArr = FinalPW.split('');
     for (var i = 0; i < pwLen; i++) {
         retVal += pwArr[Math.floor(Math.random() * pwArr.length)];
-        // console.log('retval', retVal);
     }
     return retVal;
 };
